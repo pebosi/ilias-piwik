@@ -1,0 +1,9 @@
+<!-- language file start -->
+plugin_configuration#:#Piwik Konfiguration
+warning_no_site_id_or_url#:#Eine Url zu einer Piwik Installation und eine Seiten ID werden benötigt.
+piwik_site_id#:#Seiten ID
+piwik_site_id_info#:#Seiten ID, wie sie in den Piwik Einstellungen angezeigt wird.
+piwik_url_http#:#Piwik URL HTTP
+piwik_url_http_info#:#Adresse zur Piwik Installation, (je nach Piwik Installation z.B. http://www.example.com/piwik/ oder http://piwik.example.com)
+piwik_url_https#:#Piwik URL HTTPs
+piwik_url_https_info#:#Adresse zur Piwik Installation wenn SSL genutzt werden soll
