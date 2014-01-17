@@ -47,7 +47,8 @@ class ilPiwikPlugin extends ilUserInterfaceHookPlugin
 	{
 		// save the settings
 		$this->setPiwikSiteId($this->getPiwikSiteId());
-		$this->setPiwikUrl($this->getPiwikUrl());
+		$this->setPiwikUrlHttp($this->getPiwikUrlHttp());
+		$this->setPiwikUrlHttps($this->getPiwikUrlHttps());
 	}
 
 	/**
@@ -78,7 +79,7 @@ class ilPiwikPlugin extends ilUserInterfaceHookPlugin
 	 */
 	public function setPiwikUrlHttp($a_value)
 	{
-    $this->piwik_url_http = !empty($a_value) ? filter_var($a_value, FILTER_SANITIZE_URL) : null;
+    		$this->piwik_url_http = !empty($a_value) ? filter_var($a_value, FILTER_SANITIZE_URL) : null;
 		$this->piwik_url_http = rtrim($this->piwik_url_http, '/');
 		$this->settings->set('piwik_url_http', $this->piwik_url_http);
 	}
