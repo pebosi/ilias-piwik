@@ -31,7 +31,7 @@ class ilPiwikUIHookGUI extends ilUIHookPluginGUI
 	function getHTML($a_comp, $a_part, $a_par = array())
 	{
 		global $ilCtrl, $ilUser;
-		
+
 		// loading a template and this is NOT an async call?
 		if ($a_part == "template_load" && !$ilCtrl->isAsynch())
 		{
@@ -40,11 +40,10 @@ class ilPiwikUIHookGUI extends ilUIHookPluginGUI
 			{
 				// get the plugin configuration
 				$piwik_site_id = $this->plugin_object->getPiwikSiteId();
-				$piwik_url_http = $this->plugin_object->getPiwikUrlHttp();
-				$piwik_url_https = $this->plugin_object->getPiwikUrlHttps();
-				
+				$piwik_host = $this->plugin_object->getPiwikHost();
+
 				// only proceed if piwik site id and url are set!
-				if ($piwik_site_id != null && $piwik_url_http != null)
+				if ($piwik_site_id != null && $piwik_host != null)
 				{
 					$html = $a_par['html'];
 					$index = strripos($html, "</head>", -7);
@@ -52,9 +51,8 @@ class ilPiwikUIHookGUI extends ilUIHookPluginGUI
 					{
 						$tmpl = $this->plugin_object->getTemplate("tpl.piwik_tracking.html", true, true);
 						$tmpl->setVariable("PIWIK_SITE_ID", $piwik_site_id);
-						$tmpl->setVariable("PIWIK_URL_HTTP", $piwik_url_http);
-						$tmpl->setVariable("PIWIK_URL_HTTPS", $piwik_url_https);
-					
+						$tmpl->setVariable("PIWIK_HOST", $piwik_host);
+
 						// insert code
 						$html = substr($html, 0, $index) . $tmpl->get() . substr($html, $index);
 						return array("mode" => ilUIHookPluginGUI::REPLACE, "html" => $html);
@@ -62,7 +60,7 @@ class ilPiwikUIHookGUI extends ilUIHookPluginGUI
 				}
 			}
 		}
-		
+
 		return array("mode" => ilUIHookPluginGUI::KEEP, "html" => "");
 	}
 }
