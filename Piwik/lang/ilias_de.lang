@@ -7,3 +7,5 @@ piwik_url_http#:#Piwik URL HTTP
 piwik_url_http_info#:#Adresse zur Piwik Installation, (je nach Piwik Installation z.B. http://www.example.com/piwik/ oder http://piwik.example.com)
 piwik_url_https#:#Piwik URL HTTPs
 piwik_url_https_info#:#Adresse zur Piwik Installation wenn SSL genutzt werden soll
+piwik_host#:#Piwik URL
+piwik_host_info#:#Adresse zur Piwik Installation (i.e. http://piwik.meinserver.com/ or https://piwik.meinserver.com/)

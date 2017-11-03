@@ -3,7 +3,11 @@ var _paq = _paq || [];
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 (function() {
-    var u="//{PIWIK_HOST}/";
+    var u = '';
+    if( "{PIWIK_HOST}".substr(0,4) != "http" ) {
+        u = document.location.protocol + '//';
+    }
+    u += "{PIWIK_HOST}/";
     _paq.push(['setTrackerUrl', u+'piwik.php']);
     _paq.push(['setSiteId', {PIWIK_SITE_ID}]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
