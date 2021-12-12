@@ -31,12 +31,13 @@ class ilPiwikUIHookGUI extends ilUIHookPluginGUI
 	function getHTML($a_comp, $a_part, $a_par = array())
 	{
 		global $ilCtrl, $ilUser;
-
+		
 		// loading a template and this is NOT an async call?
 		if ($a_part == "template_load" && !$ilCtrl->isAsynch())
 		{
+			
 			// is main template?
-			if (strtolower($a_par['tpl_id']) == "tpl.main.html")
+			if (strpos(strtolower($a_par['html']), "</head>") !== false)
 			{
 				// get the plugin configuration
 				$piwik_site_id = $this->plugin_object->getPiwikSiteId();
