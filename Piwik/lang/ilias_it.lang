@@ -4,6 +4,6 @@ warning_no_site_id_or_url#:#Un indirizzo valido verso l’installazione piwik e 
 piwik_site_id#:#ID del sito
 piwik_site_id_info#:#ID del sito, come mostrato nelle impostazioni piwik
 piwik_host#:#URL Piwik HTTP
-piwik_host_info#:#L’indirizzo della tua installazione piwik, (ad esempio: http://www.example.com/piwik/ o http://piwik.example.com)
+piwik_host_info#:#L’indirizzo della tua installazione piwik, (ad esempio: www.example.com/piwik o piwik.example.com)
 piwik_host_https#:#URL Piwik HTTPS
 piwik_host_https_info#:#L’indirizo alla tua installazione piwik quando SSL è in uso
