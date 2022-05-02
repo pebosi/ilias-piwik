@@ -65,7 +65,11 @@ class ilPiwikConfigGUI extends ilPluginConfigGUI
 
 		if ($form->checkInput())
 		{
-			$plugin->setPiwikSiteId($_POST["piwik_site_id"]);
+			$_POST["piwik_host"] = str_replace("https://", "", $_POST["piwik_host"]);
+			$_POST["piwik_host"] = str_replace("http://", "", $_POST["piwik_host"]);
+			$_POST["piwik_host"] = trim($_POST["piwik_host"], "/");
+			
+			$plugin->setPiwikSiteId(intval($_POST["piwik_site_id"]));
 			$plugin->setPiwikHost($_POST["piwik_host"]);
 
 			ilUtil::sendSuccess($lng->txt("saved_successfully"), true);
